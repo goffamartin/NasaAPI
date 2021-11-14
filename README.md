@@ -19,7 +19,7 @@ Verze 1.0
 * Celkový popis
   * Funkce
     * Aplikace bude volat API, ze kterého bude zobrazovat data o asteroidech
-    * Data by měla uživateli dát stručný přehled o tělesech, která byla v určitý den v blízkosti Země
+    * Data by měla uživateli dát stručný přehled o tělesech, která se aktuálně vyskytují v okolí Země
     * Data se budou skládat z názvu tělesa, rychlosti, odhadovaného průměru, datumu a času příblížení a vzdálenosti
     * Uživatel bude mít možnost rozkliknout těleso pro obsáhlejší informace
   * Uživatelské skupiny
