@@ -94,4 +94,8 @@ Verze 1.0
     * Refresh pomocí swipnutí dolů
   * Všechny dohodnuté principy 
     * Data vypisována na základě API 
+
+ Prototyp v aplikaci Adobe XD:
+ 
+ ![design_prototype](https://github.com/goffamartin/NasaAPI/blob/137197c3d4d373099b677828019f63cf1791688a/Asteroid_Prototype.png)
     
