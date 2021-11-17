@@ -17,9 +17,9 @@ public class Links
 public class Near_Earth_Objects
 {
     [JsonProperty("date")]
-    public Details[] asteroids { get; set; }
+    public Asteroid[] asteroids { get; set; }
 }
-public class Details
+public class Asteroid
 {
     public Links1 links { get; set; }
     public string id { get; set; }
@@ -31,6 +31,29 @@ public class Details
     public bool is_potentially_hazardous_asteroid { get; set; }
     public Close_Approach_Data[] close_approach_data { get; set; }
     public bool is_sentry_object { get; set; }
+
+    public string _description;
+    public string description 
+    { 
+        get
+        {
+            if(_description == null)
+            {
+                Description();
+            }
+            return _description;
+        }
+        set
+        {
+            _description = value;
+        }
+    }
+    public void Description()
+    {
+        description = $@"Datum přiblížení: {close_approach_data[0].close_approach_date_full}
+Rychlost: {close_approach_data[0].relative_velocity.kilometers_per_second} km/s
+Odhadovaný průměr: {estimated_diameter.meters.estimated_diameter_min} - {estimated_diameter.meters.estimated_diameter_max} m";
+    }
 }
 
 public class Links1
@@ -94,3 +117,5 @@ public class Miss_Distance
     public string kilometers { get; set; }
     public string miles { get; set; }
 }
+
+

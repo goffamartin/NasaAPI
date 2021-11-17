@@ -3,10 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NasaAPI.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#555555" Padding="24" CornerRadius="5">
-            <Label Text="Near Earth Objects Web" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+    <StackLayout BackgroundColor="White">
+        <Frame BackgroundColor="#555555" Padding="15" CornerRadius="15" HasShadow="True">
+            <Label Text="Asteroidy Dnes" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
+        <Label x:Name="Label_Updated" Text="{Binding LastUpdate}" FontSize="15" HorizontalTextAlignment="Center"/>
+        <ListView x:Name="AsteroidListView" ItemsSource="{Binding AsteroidList}" HasUnevenRows="True"
+           IsPullToRefreshEnabled="True"
+           RefreshCommand="{Binding RefreshCommand}"
+           IsRefreshing="{Binding IsRefreshing}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell x:Name="viewCell">
+                        <Frame CornerRadius="5" HasShadow="True" Padding="15" Margin="15" BackgroundColor="#D5D5D5">
+                            <StackLayout >
+                                <Label x:Name="A_Name" Text="{Binding name}" FontSize="20" FontAttributes="Bold"/>
+                                <Label x:Name="A_Aproach" Text="{Binding description}" FontSize="15"/>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
+    
 
 </ContentPage>
