@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NasaAPI.MainPage">
-
+             x:Class="NasaAPI.MainPage" NavigationPage.HasNavigationBar="False">
     <StackLayout BackgroundColor="White">
-        <Frame BackgroundColor="#555555" Padding="15" CornerRadius="15" HasShadow="True">
-            <Label Text="Asteroidy Dnes" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Frame BackgroundColor="#555555" Padding="15" CornerRadius="0" HasShadow="True">
+            <Label Text="Asteroidy Dnes" HorizontalTextAlignment="Center" TextColor="White" FontSize="35"/>
         </Frame>
         <Label x:Name="Label_Updated" Text="{Binding LastUpdate}" FontSize="15" HorizontalTextAlignment="Center"/>
         <ListView x:Name="AsteroidListView" ItemsSource="{Binding AsteroidList}" HasUnevenRows="True"
@@ -14,11 +13,11 @@
            IsRefreshing="{Binding IsRefreshing}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell x:Name="viewCell">
-                        <Frame CornerRadius="5" HasShadow="True" Padding="15" Margin="15" BackgroundColor="#D5D5D5">
+                    <ViewCell x:Name="viewCell" Tapped="viewCell_Tapped">
+                        <Frame CornerRadius="10" HasShadow="True" Padding="15" Margin="15" BackgroundColor="#D5D5D5">
                             <StackLayout >
-                                <Label x:Name="A_Name" Text="{Binding name}" FontSize="20" FontAttributes="Bold"/>
-                                <Label x:Name="A_Aproach" Text="{Binding description}" FontSize="15"/>
+                                <Label Text="{Binding name}" FontSize="20" FontAttributes="Bold"/>
+                                <Label x:Name="A_Description" Text="{Binding description}" FontSize="15"/>
                             </StackLayout>
                         </Frame>
                     </ViewCell>
@@ -26,6 +25,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-    
-
 </ContentPage>

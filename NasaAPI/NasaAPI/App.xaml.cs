@@ -10,7 +10,10 @@ namespace NasaAPI
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#555555") 
+            };
         }
 
         protected override void OnStart()

@@ -18,7 +18,12 @@ namespace NasaAPI
         {
             InitializeComponent();
             GetInfo();
-            
+
+            AsteroidListView.RefreshCommand = new Command(() =>
+            {
+                GetInfo();
+                AsteroidListView.IsRefreshing = false;
+            });
         }
         private async void GetInfo()
         {
@@ -39,6 +44,12 @@ namespace NasaAPI
 
                 Label_Updated.Text = $"Naposledy aktualizováno: {dt}";
             }
+        }
+
+        private void viewCell_Tapped(object sender, EventArgs e)
+        {
+            ViewCell v = sender as ViewCell;
+            Navigation.PushAsync(new DescriptionPage(v.BindingContext as Asteroid));
         }
     }
 }

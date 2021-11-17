@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NasaAPI.DescriptionPage">
+    <StackLayout>
+        <Frame CornerRadius="10" HasShadow="True" Padding="15" Margin="15" BackgroundColor="#D5D5D5">
+            <StackLayout>
+                <Label x:Name="A_Name" FontSize="24" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <Label Text="Datum přiblížení:" FontSize="20" FontAttributes="Bold" Padding="0,15,0,0"/>
+                <Label x:Name="A_Date" FontSize="18"/>
+                <Label Text="Potencionálně nebezpečný:" FontSize="20" FontAttributes="Bold" Padding="0,15,0,0"/>
+                <Label x:Name="A_Hazardous" FontSize="18"/>
+                <Label Text="Rychlost:" FontSize="20" FontAttributes="Bold" Padding="0,15,0,0"/>
+                <Label x:Name="A_Speed_kmps" FontSize="18"/>
+                <Label x:Name="A_Speed_kmph" FontSize="18"/>
+                <Label x:Name="A_Speed_mph" FontSize="18"/>
+                <Label Text="Odhadovaný průměr" FontSize="20" FontAttributes="Bold" Padding="0,15,0,0"/>
+                <Label x:Name="A_Diameter_km" FontSize="18"/>
+                <Label x:Name="A_Diameter_m" FontSize="18"/>
+                <Label x:Name="A_Diameter_mi" FontSize="18"/>
+                <Label x:Name="A_Diameter_ft" FontSize="18"/>
+                <Label Text="Vzdálenost od země" FontSize="20" FontAttributes="Bold" Padding="0,15,0,0"/>
+                <Label x:Name="A_Distance_km" FontSize="18"/>
+                <Label x:Name="A_Distance_mi" FontSize="18"/>
+                <Label x:Name="A_Distance_au" FontSize="18"/>
+                <Label x:Name="A_Distance_LD" FontSize="18"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
