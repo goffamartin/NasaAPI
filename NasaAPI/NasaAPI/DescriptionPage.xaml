@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NasaAPI.DescriptionPage">
-    <StackLayout>
+    <ScrollView>
         <Frame CornerRadius="10" HasShadow="True" Padding="15" Margin="15" BackgroundColor="#D5D5D5">
             <StackLayout>
                 <Label x:Name="A_Name" FontSize="24" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
@@ -26,5 +26,5 @@
                 <Label x:Name="A_Distance_LD" FontSize="18"/>
             </StackLayout>
         </Frame>
-    </StackLayout>
+    </ScrollView>
 </ContentPage>

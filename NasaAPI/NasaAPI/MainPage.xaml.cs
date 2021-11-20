@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using System.Collections.ObjectModel;
+using Xamarin.Essentials;
 
 namespace NasaAPI
 {
@@ -17,11 +18,24 @@ namespace NasaAPI
         public MainPage()
         {
             InitializeComponent();
-            GetInfo();
+            var current = Connectivity.NetworkAccess;
+
+            if (current == NetworkAccess.Internet)
+            {
+                GetInfo();
+            }
+            else
+            {
+
+            }
 
             AsteroidListView.RefreshCommand = new Command(() =>
             {
-                GetInfo();
+                current = Connectivity.NetworkAccess;
+                if (current == NetworkAccess.Internet)
+                {
+                    GetInfo();                
+                }
                 AsteroidListView.IsRefreshing = false;
             });
         }
