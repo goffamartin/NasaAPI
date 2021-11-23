@@ -26,7 +26,7 @@ namespace NasaAPI
             }
             else
             {
-
+                Label_Updated.Text = "Internetové připojení není k dispozici";
             }
 
             AsteroidListView.RefreshCommand = new Command(() =>
