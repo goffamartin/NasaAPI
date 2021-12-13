@@ -6,7 +6,8 @@
         <Frame BackgroundColor="#555555" Padding="15" CornerRadius="0" HasShadow="True">
             <Label Text="Asteroidy Dnes" HorizontalTextAlignment="Center" TextColor="White" FontSize="35"/>
         </Frame>
-        <Label x:Name="Label_Updated" Text="{Binding LastUpdate}" FontSize="15" HorizontalTextAlignment="Center"/>
+        <Label x:Name="Label_Updated" FontSize="15" HorizontalTextAlignment="Center"/>
+        <Label x:Name="Label_Connection" Text="Internetové připojení není k dispozici" FontSize="15" HorizontalTextAlignment="Center"/>
         <ListView x:Name="AsteroidListView" ItemsSource="{Binding AsteroidList}" HasUnevenRows="True"
            IsPullToRefreshEnabled="True"
            RefreshCommand="{Binding RefreshCommand}"
